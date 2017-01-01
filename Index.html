@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <title>Watch The Time</title>
+    <link href="Style/bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/StyleSheet2.css" rel="stylesheet" />
+    <link href="Style/StyleSheet1.css" rel="stylesheet" />
+    <link href="Style/angular-clock.css" rel="stylesheet" />
+    <link href="Style/userStyle.css" rel="stylesheet" />
+    <link href="Style/bootstrap-datetimepicker-build.css" rel="stylesheet" />
+    <script src="Scripts/Libraries/jquery.min.js"></script>
+    <script src="Scripts/Libraries/angular.min.js"></script>
+    <script src="Scripts/Libraries/angular-route.min.js"></script>
+    <script src="Scripts/Libraries/Chart.min.js"></script>
+    <script src="Scripts/Libraries/angular-chart.js"></script>
+    <script src="Scripts/Libraries/angular-animate.js"></script>
+    <script src="Scripts/Libraries/bootstrap.min.js"></script>
+    <script src="Scripts/Libraries/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <!--<script src="Scripts/Factories/log.js"></script>-->
+    <script src="Scripts/Controllers/myCtrl.js"></script>
+    <script src="Scripts/Directives/analogClock.js"></script>
+    <script src="Scripts/Directives/clock.module.js"></script>
+    <script src="Scripts/Directives/CurrentClock.js"></script>
+    <script src="Scripts/Directives/ClockDir.js"></script>
+    <script src="Scripts/Libraries/angular-clock.js"></script>
+    <script src="Scripts/Libraries/moment.js"></script>
+    <script src="Scripts/Libraries/bootstrap.dialog.js"></script>
+    <script src="Scripts/Libraries/bootstrap-datetimepicker.js"></script>
+</head>
+<body ng-controller="myCtrl as vm">
+    <div>
+        <h1></h1>
+        <div>
+            <div class="backgroundtitle4">
+                <h1 class="tytle">Watch The Time</h1>
+            </div>
+            <div class="backgroundtitle1"></div>
+            <div class="backgroundtitle2"></div>
+            <div class="backgroundtitle3"></div>
+        </div>
+        <div>
+            <div class="topMessage message">
+            </div>
+            <div class="myFadeAnimation" ng-if="isEnter==true">
+                <div class="downMessage message">
+                   
+                    <br />
+                </div>
+                <br />
+                <time-dir timetype="enterTime" ng-if="isEnter==true" timefunction="EnterSave(enterTime)" back="out()"></time-dir>
+            </div>
+        </div>
+        <div>
+            <div class="menu">
+                <br />
+                <button class="button btn" ng-init="Exit=false" ng-disabled="Exit==true" ng-click="Enter=true; isEnter=true;">Entry</button>
+                <button class="button btn" ng-disabled="Exit==false" ng-click="isEnter=true">Exit</button>
+                <button type="button" class="button btn" ng-click="TableLoad();" data-toggle="modal" data-target="#schedule">Show Schedule</button>
+                <button type="button" class="button btn" ng-click="showGraph();">Show Week</button>
+                <br />
+                <br />
+
+            </div>
+
+            <div class="clock">
+                <div></div>
+                <div class="myCanvas" style="width: 50%; height: 100%; float: right; margin-top: -20%; margin: 20px">
+                    <canvas id="base" class="chart-base" chart-type="type" data="dataGraph" labels="labels"></canvas>
+                </div>
+                <ds-widget-clock theme="dark" show-secs="true" show-am-pm></ds-widget-clock>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div id="schedule" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker10'>
+                                        <input type='text' id="input-date" class="form-control input-date"/>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar">
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-body">
+                        <table class="myTable table">
+                            <tr>
+                                <th class="myTable">Date</th>
+                                <th class="myTable">Entry</th>
+                                <th class="myTable">Exit</th>
+                                <th class="myTable">Hours</th>
+                            </tr>
+
+                            <tr ng-repeat="item in Data|filter:myFilter">
+
+                                <td>{{item.date|date:'dd/MM/yyyy'}}</td>
+
+                                <td>{{item.entry|date:'hh:mm'}}</td>
+
+                                <td>{{item.exit|date:'hh:mm'}}</td>
+
+                                <td>{{item.hours|date:'hh:mm'}}</td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
