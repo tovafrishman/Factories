@@ -1,0 +1,69 @@
+﻿@mixin title-design($color,$height) {
+    background: $color;
+    height: $height;
+}
+
+tytle {
+    font-family: Snap ITC;
+    text-align: center;
+    color: white;
+    font-size: 67px;
+    text-shadow: 0px 4px 10px black;
+}
+
+.menu {
+    text-align: center;
+    margin-top: 50px;
+    background: rgb(0, 0, 0);
+}
+
+.backgroundtitle1 {
+    @include title-design(black,10px)
+}
+
+.backgroundtitle2 {
+    @include title-design(white,5px)
+}
+
+.backgroundtitle3 {
+    @include title-design(blue,15px)
+}
+
+.backgroundtitle4 {
+    @include title-design(green,4px)
+}
+
+.saveCancle {
+    width: 30%;
+}
+.myTable {
+    text-align: center;
+}
+
+.clock {
+    background-color: #a5a5a5;
+}
+.myLabel {
+    font-weight: normal;
+}
+
+.downMessage {
+    color: white;
+    width: 100%;
+}
+
+.topMessage {
+    margin-left: 100%;
+}
+
+.evening {
+    width: 100%;
+}
+
+.myCanvas {
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin-top: -20%;
+    margin: 20px;
+}

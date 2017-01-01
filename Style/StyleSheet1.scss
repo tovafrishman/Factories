@@ -1,0 +1,190 @@
+﻿$border-bottom: groove;
+$font-family: Gabriola;
+
+.all-button {
+    font-family: $font-family;
+    background: white;
+    width: 20%;
+    height: 80px;
+    font-size: 50px;
+    border-bottom: $border-bottom;
+}
+
+.button {
+    @extend .all-button;
+    text-align: center;
+    color: green;
+}
+
+button {
+    &:hover {
+        background: rgb(0, 23, 159);
+        color: white;
+        border-bottom: $border-bottom;
+    }
+
+    &:disabled {
+        &:hover {
+            color: red;
+            background: white;
+        }
+
+        @extend .all-button;
+        border-radius: 10px;
+        color: gray;
+    }
+}
+
+.buttonTimePicker {
+    border-radius: 10px;
+    font-family: $font-family;
+    background: white;
+    width: 100px;
+    height: 50px;
+    font-size: 40px;
+    border-bottom: $border-bottom;
+    color: green;
+}
+
+buttonTimePicker:hover {
+    background: rgb(37, 190, 226);
+    color: white;
+    border-bottom: solid;
+}
+
+.td {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    color: black;
+    font-family: $font-family;
+    font-size: 30px;
+}
+
+.th {
+    font-family: $font-family;
+    font-size: 40px;
+    text-align: center;
+    font-stretch: wider;
+}
+
+.message {
+    font-family: $font-family;
+    font-size: 40px;
+    background-color: green;
+    width: 27%;
+    height: 50%;
+    left: 2%;
+    text-align: center;
+}
+
+/*הגדרות לקלאס של האנימציה*/
+
+.animate-repeat {
+    width: 200px;
+    height: 50px;
+    border: rgb(185, 1, 1);
+    color: white;
+
+    &.ng-enter {
+        transition: 2.5s;
+        /*מספר שניות*/
+        opacity: 0;
+    }
+
+    &.ng-enter-active {
+        opacity: 1;
+        color: white;
+    }
+
+    &.ng-leave {
+        transition: 0.8s;
+        opacity: 1;
+    }
+
+    &.ng-leave-active {
+        opacity: 0;
+    }
+}
+
+/* כניסת אנימציה*/
+
+/*במהלך כניסת האנימציה*/
+
+/* עזיבת אנימציה*/
+
+/* בעת עזיבת אנימציה*/
+
+.widget-clock {
+    .digital {
+        text-align: center;
+        background-color: white;
+    }
+
+    .time {
+        font-family: 'Syncopate',sans-serif;
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    .square {
+        position: relative;
+        width: 85%;
+        height: 0;
+        padding-bottom: 37%;
+        margin: 100px;
+        color: blue;
+    }
+
+    svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+
+    .clock-face {
+        stroke: transparent;
+        fill: #fff;
+    }
+
+    .minor {
+        stroke: #999;
+        stroke-width: 0.5;
+    }
+
+    .major {
+        stroke: #333;
+        stroke-width: 1;
+    }
+
+    .hour {
+        stroke: #333;
+    }
+
+    .minute {
+        stroke: #666;
+    }
+
+    .second {
+        stroke: blue;
+    }
+
+    .second-counterweight {
+        stroke: green;
+        stroke-width: 3;
+    }
+
+    &.dark {
+        .clock-face {
+            fill: transparent;
+        }
+
+        .hour {
+            stroke: #666;
+        }
+
+        .minute {
+            stroke: #999;
+        }
+    }
+}

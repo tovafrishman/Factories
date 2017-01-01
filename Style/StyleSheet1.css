@@ -1,0 +1,186 @@
+﻿body {
+   
+}
+.button{
+text-align:center;
+border-radius:10px;
+font-family: Gabriola;
+background:white;
+width:20%;
+height:80px;
+font-size:50px;
+border-bottom:groove;
+color:green
+}
+button:hover {
+background:rgb(0, 23, 159);
+color:white;
+border-bottom:groove;
+   
+}
+button:disabled:hover {
+    color:red;
+    background:white;
+    
+}
+button:disabled {
+border-radius:10px;
+font-family: Gabriola;
+background:white;
+width:20%;
+height:80px;
+font-size:50px;
+border-bottom:groove;
+color:gray
+}
+
+
+.buttonTimePicker {
+border-radius:10px;
+font-family: Gabriola;
+background:white;
+width:100px;
+height:50px;
+font-size:40px;
+border-bottom:groove;
+color:green
+}
+
+    buttonTimePicker:hover {
+        background:rgb(37, 190, 226);
+    color:white;
+    border-bottom:solid;
+    }
+.td {
+    border-left-color:transparent;
+    border-right-color:transparent;
+    color:black;
+    font-family:Gabriola;
+    font-size:30px;
+
+}
+.th {
+    font-family:Gabriola;
+    font-size:40px;
+    text-align:center;
+    font-stretch:wider;
+ 
+
+
+}
+.message {
+    font-family: Gabriola;
+    font-size:40px;
+background-color: green; 
+width:27%;
+
+height:50%;
+left:2%;
+
+text-align:center; 
+}
+
+
+
+
+   /*הגדרות לקלאס של האנימציה*/
+        .animate-repeat {
+            width: 200px;
+            height: 50px;
+            border: rgb(185, 1, 1);
+            color:white
+        }
+        /* כניסת אנימציה*/
+            .animate-repeat.ng-enter {
+                transition: 2.5s;/*מספר שניות*/
+                opacity: 0;
+                
+            }
+            /*במהלך כניסת האנימציה*/
+            .animate-repeat.ng-enter-active {
+                opacity: 1;
+                color: white;
+            }
+            /* עזיבת אנימציה*/
+            .animate-repeat.ng-leave {
+                transition: 0.8s;
+                opacity: 1;
+              
+            }
+            /* בעת עזיבת אנימציה*/
+            .animate-repeat.ng-leave-active {
+                opacity: 0;
+            }
+            
+.widget-clock .digital {
+    text-align: center;
+    background-color:white;
+}
+
+.widget-clock .time {
+    font-family: 'Syncopate',sans-serif;
+    font-size: 2.5em;
+    margin: 0;
+
+
+}
+
+.widget-clock .square {
+    position: relative;
+    width: 85%;
+    height: 0;
+    padding-bottom: 37%;
+    margin:100px;
+    color:blue;
+}
+
+.widget-clock svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.widget-clock .clock-face {
+    stroke: transparent;
+    fill: #fff;
+}
+
+.widget-clock .minor {
+    stroke: #999;
+    stroke-width: 0.5;
+}
+
+.widget-clock .major {
+    stroke: #333;
+    stroke-width: 1;
+}
+
+.widget-clock .hour {
+    stroke: #333;
+}
+
+.widget-clock .minute {
+    stroke: #666;
+}
+
+.widget-clock .second {
+    stroke: blue;
+}
+
+.widget-clock .second-counterweight {
+    stroke: green;
+    stroke-width: 3;
+}
+
+.widget-clock.dark .clock-face {
+    fill: transparent;
+}
+
+.widget-clock.dark .hour {
+    stroke: #666;
+}
+
+.widget-clock.dark .minute {
+    stroke: #999;
+}

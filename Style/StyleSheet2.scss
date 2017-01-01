@@ -1,0 +1,35 @@
+﻿//$transition: 1s linear all
+@mixin enter-animation($opacity,$left) {
+    opacity: $opacity;
+    left: $left;
+}
+
+$transition: 1s linear all;
+
+.myFadeAnimation {
+    margin-top: 40px;
+    border: 1px solid #000;
+    position: relative;
+    width: 30%;
+    height: 60%;
+    left: 2%;
+}
+
+.myFadeAnimation.ng-enter {
+    transition: $transition;
+    @include enter-animation(0,-25%)
+}
+
+/* The starting CSS styles for the enter animation */
+.myFadeAnimation.ng-enter.ng-enter-active {
+    @include enter-animation(1,2%)
+}
+
+.myFadeAnimation.ng-leave {
+    transition: $transition;
+    @include enter-animation(1,2%)
+}
+
+.myFadeAnimation.ng-leave.ng-leave-active {
+    @include enter-animation(0,-25%)
+}
